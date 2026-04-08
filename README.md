@@ -382,6 +382,3 @@ Gunakan akun berikut untuk testing setelah menjalankan `npm run db:seed`:
 - Production: Gunakan persistent database untuk rate limiting (Redis recommended)
 
 ---
-
-Dibuat dengan ❤️ untuk Web Programmer Challenge 2026
-# test-webdeveloper
