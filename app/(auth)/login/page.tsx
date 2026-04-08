@@ -151,35 +151,6 @@ export default function LoginPage() {
             </div>
           )}
 
-          {/* Rate Limit Alert */}
-          {rateLimitCountdown !== null && (
-            <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <span className="text-2xl">⏱️</span>
-                  <span className="text-yellow-800 font-medium">
-                    Terlalu banyak percobaan
-                  </span>
-                </div>
-              </div>
-              <p className="text-yellow-700 text-sm mt-2">
-                Coba lagi dalam{" "}
-                <span className="font-bold text-lg text-yellow-900">
-                  {rateLimitCountdown}
-                </span>{" "}
-                detik
-              </p>
-              <div className="w-full bg-yellow-200 rounded-full h-2 mt-3">
-                <div
-                  className="bg-yellow-500 h-2 rounded-full transition-all"
-                  style={{
-                    width: `${rateLimitTotal > 0 ? ((rateLimitTotal - (rateLimitCountdown ?? 0)) / rateLimitTotal) * 100 : 0}%`,
-                  }}
-                ></div>
-              </div>
-            </div>
-          )}
-
           {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email Field */}
@@ -288,10 +259,7 @@ export default function LoginPage() {
                   Memproses...
                 </>
               ) : rateLimitCountdown !== null ? (
-                <>
-                  <span className="text-lg mr-2">⏱️</span>
-                  Tunggu {rateLimitCountdown}s
-                </>
+                <>{rateLimitCountdown}s</>
               ) : (
                 "Login"
               )}
